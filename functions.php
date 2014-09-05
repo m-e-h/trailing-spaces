@@ -1,14 +1,14 @@
 <?php
 /**
- * @package    Terminal
+ * @package    CMD
  * @author     Marty Helmick <info@martyhelmick.com>
  * @copyright  Copyright (c) 2014, Marty Helmick
- * @link       http://themehybrid.com/themes/terminal
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @link       https://github.com/m-e-h/cmd
+ * @license    http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /* Add the child theme setup function to the 'after_setup_theme' hook. */
-add_action( 'after_setup_theme', 'terminal_theme_setup' );
+add_action( 'after_setup_theme', 'cmd_theme_setup' );
 
 /**
  * Setup function. All child themes should run their setup within this function. The idea is to add/remove
@@ -18,7 +18,7 @@ add_action( 'after_setup_theme', 'terminal_theme_setup' );
  * @access public
  * @return void
  */
-function terminal_theme_setup() {
+function cmd_theme_setup() {
 
 	/*
 	 * Add a custom background to overwrite the defaults.
@@ -49,19 +49,17 @@ function terminal_theme_setup() {
 	/*
 	 * Add a custom default color for the "menu" color option.
 	 */
-	add_filter( 'theme_mod_color_menu', 'terminal_color_menu' );
+	add_filter( 'theme_mod_color_menu', 'cmd_color_menu' );
 
 	/*
 	 * Add a custom default color for the "primary" color option.
 	 */
-	add_filter( 'theme_mod_color_primary', 'terminal_color_primary' );
+	add_filter( 'theme_mod_color_primary', 'cmd_color_primary' );
 
 	/*
 	 * Add child theme fonts to editor styles.
 	 */
-	add_editor_style( terminal_fonts_url() );
 
-}
 
 /**
  * Filters the header icon to set the default.
@@ -71,7 +69,7 @@ function terminal_theme_setup() {
  * @param  string  $icon
  * @return string
  */
-function terminal_theme_mod_header_icon( $icon ) {
+function cmd_theme_mod_header_icon( $icon ) {
 	return 'default' === $icon ? 'icon-terminal' : $icon;
 }
 
@@ -83,7 +81,7 @@ function terminal_theme_mod_header_icon( $icon ) {
  * @param  string  $hex
  * @return string
  */
-function terminal_color_menu( $hex ) {
+function cmd_color_menu( $hex ) {
 	return $hex ? $hex : '34495e';
 }
 
@@ -95,7 +93,7 @@ function terminal_color_menu( $hex ) {
  * @param  string  $hex
  * @return string
  */
-function terminal_color_primary( $hex ) {
+function cmd_color_primary( $hex ) {
 	return $hex ? $hex : '2980b9';
 }
 
@@ -105,66 +103,16 @@ function terminal_color_primary( $hex ) {
  * @since  1.0.0
  * @return void
  */
-function terminal_scripts() {
+ add_action( 'wp_enqueue_scripts', 'cmd_enqueue_styles' );
+ 
+function cmd_enqueue_styles() {
 
 	/* Dequeue parent theme fonts. */
 	wp_dequeue_style( 'saga-fonts' );
 
 	/* Enqueue child themes fonts. */
-	wp_enqueue_style( 'terminal-fonts', terminal_fonts_url(), array(), null );
+	wp_enqueue_style( 'cmd-fonts', '//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Source+Code+Pro:200,300,400,500,600' );
 
 }
-add_action( 'wp_enqueue_scripts', 'terminal_scripts', 11 );
 
-/**
- * Enqueue theme fonts in admin header page.
- *
- * @since  1.0.0
- * @return void
- */
-function terminal_custom_header_fonts() {
-	wp_enqueue_style( 'terminal-fonts', terminal_fonts_url(), array(), null );
 }
-add_action( 'admin_print_styles-appearance_page_custom-header', 'terminal_custom_header_fonts' );
-
-/**
- * Return the Google font stylesheet URL.
- *
- * @since  1.0.0
- * @return string
- */
-function terminal_fonts_url() {
-
-	$fonts_url = '';
-
-	/* Translators: If there are characters in your language that are not
-	 * supported by Fira Sans, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$fira_sans = _x( 'on', 'Fira Sans font: on or off', 'terminal' );
-
-	/* Translators: If there are characters in your language that are not
-	 * supported by Source Code Pro, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$source_code_pro = _x( 'on', 'Source Code Pro font: on or off', 'terminal' );
-
-	if ( 'off' !== $fira_sans || 'off' !== $source_code_pro ) {
-		$font_families = array();
-
-		if ( 'off' !== $fira_sans )
-			$font_families[] = 'Fira Sans:300,400,500,700';
-
-		if ( 'off' !== $source_code_pro )
-			$font_families[] = 'Source Code Pro:200,300,400,500,600';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
-	}
-
-	return $fonts_url;
-}
-
