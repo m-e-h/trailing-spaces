@@ -1,4 +1,4 @@
 cmd
 ===
 
-A child theme for Saga
+A WordPress child theme for Saga
