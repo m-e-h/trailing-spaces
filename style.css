@@ -1,0 +1,738 @@
+/**
+ * Theme Name:  Terminal
+ * Theme URI:   http://themehybrid.com/themes/terminal
+ * Description: It is all about the balance in life and in written word. Terminal theme's goal is to make publishing your written word fun and easy at the same time.
+ * Version:     1.0.0
+ * Author:      Marty Helmick
+ * Author URI:  https://github.com/m-e-h
+ * Tags:        one-column, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, responsive-layout, rtl-language-support, theme-options, threaded-comments, translation-ready
+ * Text Domain: terminal
+ * Domain Path: /languages/
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Template:    saga
+ */
+
+ /********************************************************************************************************
+ * 2 - Fun Zone
+ *
+ * This section of the stylesheet is what I call the fun area.  For the most part, you should feel free
+ * to overwrite the following in your child theme's `style.css` file if your design calls for it.
+ * Specifically, this deals with fonts and colors.  Those things are really the things that give your
+ * child theme its uniqueness.  Have fun with it.  Go wild!
+ ********************************************************************************************************/
+
+/**
+ * 2.1 - Font Family Definitions
+ *
+ * This theme operates with three dinstinct font rules.  The "primary" font is used for the majority of
+ * text throughout the theme.  The "secondary" font is used for handling secondary use cases.  The
+ * "headlines" font is specific to h1-h6 headers (with the exception of #site-description).
+ *
+ * If building a child theme for public release with custom fonts, the child theme should define only the
+ * font rules it needs.  Copy the specific section below that you want to overwrite into the child theme.
+ * Make sure to include the `.font-*` class as this will maintain forward compatibility with future
+ * changes in the parent theme.
+ */
+
+/* ====== Primary Font ====== */
+
+body,
+#site-title,
+.main .entry-subtitle,
+button,
+.font-primary {
+	font-family: 'Lato', sans-serif;
+}
+
+/* ====== Secondary Font ====== */
+
+blockquote,
+dt,
+.entry-byline .entry-author a,
+var,
+.font-secondary {
+	font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ====== Headlines Font ====== */
+
+h1, h2, h3, h4, h5, h6,
+.font-headlines {
+	font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ====== Code Font ====== */
+
+body pre,
+body code {
+	font-family: Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+}
+
+
+/**
+ * 2.2 - Color Definitions
+ *
+ * The following are all of the colors defined by the theme.  The only other colors are part of the theme
+ * customizer options and should not be overwritten.  If needed, copy the specific sections below into
+ * your child theme and make the necessary changes there.
+ */
+
+/*
+ * Fun Zone: The colors below are safe to overwrite depending on what you need to do.  Have at it!
+ */
+
+
+/**********************************/
+
+/* === background rgb( 119, 119, 119 ) === */
+
+h1::after,
+h2::after,
+h3::after,
+h4::after,
+h5::after,
+h6::after,
+.singular .entry-header::after,
+.singular-post .main .entry-title::after,
+.singular-literature .entry-meta::after,
+.singular-attachment .main .entry-title::after {
+	background: rgba( 119, 119, 119, 0.1 );
+}
+
+/* === background rgb( 255, 255, 255 ) === */
+
+	@media only screen and ( min-width: 850px ) {
+
+		.plural .entry > .wrap { background: rgba( 255, 255, 255, 0.9 ); }
+	}
+
+/* === color #d5d5d5 === */
+
+.mejs-unmute,
+.mejs-unmute button { color: #d5d5d5; }
+
+/* === color #b5b5b5 === */
+
+.entry-header,
+.entry-footer,
+.media-meta .data,
+.comments-closed,
+.comment-meta,
+label,
+.logged-in-as,
+.form-allowed-tags,
+.comment-notes,
+.comments-nav .page-numbers {
+	color: #b5b5b5;
+}
+
+/* === color #959595 === */
+
+blockquote,
+.gallery-caption {
+	color: #959595;
+}
+
+/* === color #858585 === */
+
+.wp-caption .wp-caption-text,
+.page-links,
+dd,
+.wp-playlist-item-meta,
+.wp-playlist-item-length { color: #858585; }
+
+/* === color #757575 === */
+
+pre,
+blockquote cite {
+	color: #757575;
+}
+
+/* === color #555 === */
+
+.line-through del,
+.line-through strike,
+.line-through s,
+.entry-content,
+.entry-summary,
+.media-meta .prep,
+.comment-content {
+	color: #555;
+}
+
+/* === color #454545 === */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.entry-byline .entry-author a {
+	color: #454545;
+}
+
+/* === color #353535 === */
+
+.entry-subtitle {
+	color: #353535;
+}
+
+/* === color #252525 === */
+
+.main .entry-title,
+.entry-title a {
+	color: #252525;
+}
+
+/* === border color rgb( 119, 119, 119 ) === */
+
+.wp-playlist,
+.page-links .page-numbers,
+.page-links a {
+	border-color: rgba( 119, 119, 119, 0.1 );
+}
+
+li.ping,
+.comment-content {
+	border-color: rgba( 119, 119, 119, 0.15 );
+}
+
+.wp-playlist-tracks .wp-playlist-item,
+.media-meta li {
+	border-bottom-color: rgba( 119, 119, 119, 0.1 );
+}
+
+/* === background #fff === */
+
+.entry > .wrap,
+.plural .entry,
+.singular .main,
+.error-404 .main {
+	background-color: #fff;
+}
+
+/* === background transparent === */
+
+pre code,
+hr {
+	background: transparent;
+}
+
+a img {
+	background: #fafafa;
+	border-color: #e5f5f5;
+}
+
+/* === gallery count / caption text colors === */
+
+.format-gallery .gallery-count,
+.featured-media .wp-caption-text {
+	background: rgba( 0, 0, 0, 0.5 );
+	color:      rgba( 255, 255, 255, 0.95 );
+}
+
+/* === image colors === */
+
+a.img-hyperlink:focus { outline: initial; }
+
+.featured-media a:focus img { border: none; }
+
+/* === menu-primary colors === */
+
+#menu-primary > .wrap { background: #151515; }
+
+#menu-primary li a {
+	border-top-color:    rgba( 255, 255, 255, 0.1 );
+	border-bottom-color: transparent;
+}
+
+	#menu-primary .menu-items > li:first-of-type > a {
+		border-top-color: transparent;
+	}
+
+	#menu-primary .menu-items > li:first-of-type > a:focus,
+	#menu-primary li a:focus {
+		outline: initial;
+		border-color: #fff;
+	}
+
+/* === text-shadow ( 0, 0, 0, 0.2 ) === */
+
+.menu-toggle button,
+.loop-pagination .page-numbers,
+#menu-primary li a { text-shadow: 2px 2px 0 rgba( 0, 0, 0, 0.2 ); }
+
+/* === border-color #f1f1f1 === */
+
+pre,
+.form-allowed-tags code,
+code,
+thead,
+tfoot
+tr,
+td { border-color: #f1f1f1; }
+
+/* === form colors === */
+
+input[type="number"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select {
+	background: #f5f5f5;
+	border-color: #e5e5e5;
+}
+
+hr, fieldset { border-color: #e5e5e5; }
+
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus {
+	color:        #555;
+	background:   #f0f0f0;
+	border-color: #e0e0e0;
+}
+
+/* === media player colors === */
+
+.wp-audio-shortcode.mejs-container,
+.mejs-controls,
+.mejs-volume-button .mejs-volume-slider,
+.mejs-time-rail .mejs-time-float,
+.wp-playlist-dark {
+	background: #252525;
+}
+
+	.wp-playlist-dark .mejs-controls { background: #151515; }
+
+	.wp-playlist-dark .wp-playlist-tracks a { color: rgba( 255, 255, 255, 0.75 ); }
+
+.mejs-container,
+.mejs-embed,
+.mejs-embed body,
+.mejs-overlay-button,
+.mejs-controls > .mejs-button button:hover,
+.mejs-controls > .mejs-button button:focus {
+	background: transparent;
+}
+
+.mejs-time-rail .mejs-time-float        { border-color: #454545; }
+.mejs-time-rail .mejs-time-float-corner { border-top-color: #fff; }
+
+.mejs-time-rail .mejs-time-total,
+.mejs-horizontal-volume-slider .mejs-horizontal-volume-total,
+.mejs-volume-button .mejs-volume-slider .mejs-volume-total {
+	background: #454545;
+}
+
+.mejs-time-rail .mejs-time-current { background: rgba( 255, 255, 255, 0.35 ); }
+
+.mejs-overlay-play .mejs-overlay-button::after { text-shadow: 1px 1px 2px #151515; }
+
+.mejs-button button:focus { outline-color: #555; }
+
+/* === Chat speaker colors === */
+
+.format-chat .chat-speaker-1 .chat-author,
+.format-chat .chat-speaker-11 .chat-author { color: #3498db; }
+.format-chat .chat-speaker-2 .chat-author,
+.format-chat .chat-speaker-12 .chat-author  { color: #f1c40f; }
+.format-chat .chat-speaker-3 .chat-author,
+.format-chat .chat-speaker-13 .chat-author  { color: #e74c3c; }
+.format-chat .chat-speaker-4 .chat-author,
+.format-chat .chat-speaker-14 .chat-author  { color: #2ecc71; }
+.format-chat .chat-speaker-5 .chat-author,
+.format-chat .chat-speaker-15 .chat-author  { color: #f39c12; }
+.format-chat .chat-speaker-6 .chat-author,
+.format-chat .chat-speaker-16 .chat-author  { color: #9b59b6; }
+.format-chat .chat-speaker-7 .chat-author,
+.format-chat .chat-speaker-17 .chat-author  { color: #95a5a6; }
+.format-chat .chat-speaker-8 .chat-author,
+.format-chat .chat-speaker-18 .chat-author  { color: #16a085; }
+.format-chat .chat-speaker-9 .chat-author,
+.format-chat .chat-speaker-19 .chat-author  { color: #e67e22; }
+.format-chat .chat-speaker-10 .chat-author,
+.format-chat .chat-speaker-20 .chat-author  { color: #1abc9c; }
+
+
+/* =/=/=/=/=/= End fun zone. =/=/=/=/=/= */
+
+/*
+ * Colors Danger Zone: The white color is used in contrast to the 'primary' and 'menu' theme colors.
+ * It's not recommended to overwrite this specific color section. If overwriting, it should be a very
+ * light color.
+ */
+
+/* === color #fff === */
+
+::selection {
+	color: #fff; /* Don't combine with other elements. Breaks Firefox. */
+}
+
+.mejs-button,
+.mejs-button button,
+.menu-toggle button,
+.page-links a,
+.page-links a:hover,
+.page-links a:focus,
+.loop-pagination .page-numbers,
+#menu-primary li a,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.comment-reply-link,
+.comment-reply-link:hover,
+.comment-reply-link:focus,
+.wp-playlist-dark .wp-playlist-tracks .wp-playlist-playing a,
+.wp-playlist-dark .wp-playlist-tracks a:hover,
+.wp-playlist-dark .wp-playlist-tracks a:focus,
+.mejs-time .mejs-currenttime,
+.mejs-time .mejs-duration,
+.mejs-volume-button .mejs-volume-slider .mejs-volume-current,
+.mejs-volume-button .mejs-volume-slider .mejs-volume-handle,
+.mejs-time-rail .mejs-time-float,
+.wp-playlist-dark .wp-playlist-playing,
+.wp-playlist-dark .wp-playlist-caption:hover,
+.wp-playlist-dark .wp-playlist-caption:focus,
+.wp-playlist-dark .wp-playlist-item:hover
+.wp-playlist-dark .wp-playlist-item:focus {
+	color: #fff;
+}
+
+pre,
+.form-allowed-tags code {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, 0.5)), color-stop(.5, transparent), to(transparent));
+	background-image: -webkit-linear-gradient( rgba( 255, 255, 255, 0.5 ) 50%, transparent 50%, transparent );
+	background-image:    -moz-linear-gradient( rgba( 255, 255, 255, 0.5 ) 50%, transparent 50%, transparent );
+	background-image:      -o-linear-gradient( rgba( 255, 255, 255, 0.5 ) 50%, transparent 50%, transparent );
+	background-image:         linear-gradient( rgba( 255, 255, 255, 0.5 ) 50%, transparent 50%, transparent );
+}
+
+
+/* =/=/=/=/=/= End colors danger zone. =/=/=/=/=/= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Primary Font ====== */
+
+body,
+.main .entry-subtitle,
+button,
+.font-primary {
+	font-family: 'Fira Sans', sans-serif;
+	font-style: normal;
+}
+
+/* ====== Secondary Font ====== */
+
+a,
+blockquote,
+dt,
+.entry-byline .entry-author a,
+var,
+.font-secondary {
+	font-family: 'Source Code Pro', monospace;
+	font-style: normal;
+}
+
+/* ====== Headlines Font ====== */
+
+h1, h2, h3, h4, h5, h6,
+.font-headlines,
+#site-title,
+#site-description {
+	font-family: 'Source Code Pro', monospace;
+	//text-transform: none;
+	font-style: normal;
+}
+
+#site-title {
+	font-weight: 300;
+}
+#site-description {
+	text-transform: lowercase;
+}
+
+.menu-toggle button, .loop-pagination .page-numbers, #menu-primary li a {
+text-shadow: none;
+}
+
+.mejs-button,
+.mejs-button button,
+.menu-toggle button,
+.page-links a,
+.page-links a:hover,
+.page-links a:focus,
+.loop-pagination .page-numbers,
+#menu-primary li a,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.comment-reply-link,
+.comment-reply-link:hover,
+.comment-reply-link:focus,
+.wp-playlist-dark .wp-playlist-tracks .wp-playlist-playing a,
+.wp-playlist-dark .wp-playlist-tracks a:hover,
+.wp-playlist-dark .wp-playlist-tracks a:focus,
+.mejs-time .mejs-currenttime,
+.mejs-time .mejs-duration,
+.mejs-volume-button .mejs-volume-slider .mejs-volume-current,
+.mejs-volume-button .mejs-volume-slider .mejs-volume-handle,
+.mejs-time-rail .mejs-time-float,
+.wp-playlist-dark .wp-playlist-playing,
+.wp-playlist-dark .wp-playlist-caption:hover,
+.wp-playlist-dark .wp-playlist-caption:focus,
+.wp-playlist-dark .wp-playlist-item:hover
+.wp-playlist-dark .wp-playlist-item:focus {
+	color: #ecf0f1;
+}
+
+.loop-pagination {
+display: flex;
+}
+
+.loop-pagination .current {
+text-decoration: none;
+color: #e67e22;
+cursor: default;
+}
+
+.page-numbers {
+border: 3px solid #2C3E50;
+border-radius: 2px;
+}
+
+		a,
+		.entry-subtitle,
+		label,
+		input[type="number"],
+		input[type="date"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="email"],
+		input[type="month"],
+		input[type="password"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="text"],
+		input[type="time"],
+		input[type="url"],
+		input[type="week"],
+		textarea,
+		select,
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button,
+		a img
+		 {
+			-webkit-transition: all 0.2s ease-in-out;
+			   -moz-transition: all 0.2s ease-in-out;
+			      -o-transition:  all 0.2s ease-in-out;
+			        transition: all 0.2s ease-in-out;
+		}
+
+a:hover, 
+a:focus,
+input[type=submit]:focus, 
+input[type=submit]:hover, 
+input[type=reset]:focus, 
+input[type=reset]:hover, 
+input[type=button]:focus, 
+input[type=button]:hover, 
+button:focus, 
+button:hover, 
+.menu-toggle button:hover, 
+.media-info-toggle:hover {
+	text-decoration: none;
+}
+
+
+a:hover, 
+a:focus {
+	text-decoration: none;
+	background-color: #EEE8D5;
+}
+
+/*.singular .content {
+	background-color: #EEE8D5;
+}*/
+.entry > .wrap, .plural .entry, .singular .main, .error-404 .main {
+background-color: #FDF6E3;
+}
+
+/*.singular .entry>.wrap, .error-404 .entry>.wrap {
+	max-width: 100%;
+}*/
+
+/*.singular .entry-content {
+max-width: 650px;
+margin: 0 auto;
+}*/
+
+/*.plural .format-image.has-post-thumbnail {
+	background-color: rgba(255, 255, 255, 0.66);
+}*/
+
+/*.singular .format-image.has-post-thumbnail.entry>.wrap {
+	max-width: 650px;
+}*/
+
+.line-through del, .line-through strike, .line-through s, .entry-content, .entry-summary, .media-meta .prep, .comment-content {
+color: #657B83;
+}
+
+h1, h2, h3, h4, h5, h6, .entry-byline .entry-author a {
+color: #B58900;
+}
+
+.main .entry-title, .entry-title a {
+color: #7f8c8d;
+text-transform: lowercase;
+}
+
+.entry-header, .entry-footer, .media-meta .data, .comments-closed, .comment-meta, label, .logged-in-as, .form-allowed-tags, .comment-notes, .comments-nav .page-numbers {
+color: #93A1A1;
+}
+
+blockquote, .gallery-caption {
+color: #ECF0F1;
+background-color: #34495E;
+padding:     1.875rem 1.5rem;
+font-size:   1.125rem;
+line-height: 1.875rem;
+border-radius: 3px;
+margin-bottom: 1.5rem;
+}
+
+blockquote p, .gallery-caption p {
+margin: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="number"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select {
+color: #586E75;
+background: #EEE8D5;
+border-color: #e9e1c9;
+border-radius: 2px;
+}
+
+input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus, select:focus {
+color: #586E75;
+background: #e9e1c9;
+border-color: #e9e1c9;
+}
+
+
+.entry.format-quote blockquote::before, .format-quote blockquote::after {
+content: '\007B';
+font-style: normal;
+color: #CB4B16;;
+font-weight: 200;
+}
+
+.entry.format-quote blockquote::after {
+content: '\007D';
+bottom: 5.3rem;
+top: auto;
+color: #CB4B16;;
+}
+
+blockquote cite {
+color: #ecf0f1;
+}
+
+/*.wrap .menu-toggle button, .wrap #menu-primary li a {
+background: none;
+}
+
+.menu-toggle button:hover, .menu-toggle button:focus, #menu-primary li a:hover, #menu-primary li a:focus, .loop-pagination a:hover, .loop-pagination a:focus, .loop-pagination .current {
+background-color: #002B36;
+}*/
+
+.plural .entry > .wrap {
+background: rgba(253, 246, 227, 0.9);
+}
+
+.entry > .wrap, .plural .entry, .singular .main, .error-404 .main,
+input[type="submit"],
+button {
+border-radius: 2px;
+}
+
+#menu-primary li a {
+border-style: solid;
+color: #ecf0f1;
+}
+
+.menu-toggle button {
+	color: #ecf0f1;
+}
+#menu-primary .menu-items > li:first-of-type > a {
+border-radius: 2px 0 0 0;
+}
+
+#menu-primary .menu-items > li:last-of-type > a {
+border-radius: 0 0 2px 2px;
+}
+
+#menu-primary > .wrap {
+border-radius: 3px 0 3px 3px;
+}
+
+#menu-primary button.active {
+border-radius: 2px 2px 0 0;
+}
+
+
+
+
+#site-title, #site-title a, #footer .credit a, .ltr #site-description {
+background: #34495e;
+}
