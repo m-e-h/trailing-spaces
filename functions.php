@@ -28,7 +28,7 @@ function cmd_theme_setup() {
 	add_theme_support(
 		'custom-background',
 		array(
-			'default-color' => '2c3e50',
+			'default-color' => '073642',
 			'default-image' => ''
 		)
 	);
@@ -41,11 +41,16 @@ function cmd_theme_setup() {
 	add_theme_support(
 		'custom-header',
 		array(
-			'default-text-color' => 'ecf0f1',
+			'default-text-color' => 'b58900',
 			'default-image'      => ''
 		)
 	);
 
+
+	/*
+	 * Add a custom default icon for the "header_icon" option
+	 */
+	add_filter( 'theme_mod_header_icon', 'cmd_theme_mod_header_icon' );
 	/*
 	 * Add a custom default color for the "menu" color option.
 	 */
@@ -55,10 +60,6 @@ function cmd_theme_setup() {
 	 * Add a custom default color for the "primary" color option.
 	 */
 	add_filter( 'theme_mod_color_primary', 'cmd_color_primary' );
-
-	/*
-	 * Add child theme fonts to editor styles.
-	 */
 
 
 /**
@@ -94,7 +95,7 @@ function cmd_color_menu( $hex ) {
  * @return string
  */
 function cmd_color_primary( $hex ) {
-	return $hex ? $hex : '2980b9';
+	return $hex ? $hex : '268BD2';
 }
 
 /**
@@ -104,7 +105,7 @@ function cmd_color_primary( $hex ) {
  * @return void
  */
  add_action( 'wp_enqueue_scripts', 'cmd_enqueue_styles' );
- 
+
 function cmd_enqueue_styles() {
 
 	/* Dequeue parent theme fonts. */

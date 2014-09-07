@@ -1,7 +1,7 @@
 /**
  * Theme Name:  CMD
  * Theme URI:   https://github.com/m-e-h/cmd
- * Description: Tech blog theme 
+ * Description: Tech blog theme
  * Version:     1.0.0
  * Author:      Marty Helmick
  * Author URI:  https://github.com/m-e-h
@@ -43,12 +43,12 @@ h1, h2, h3, h4, h5, h6,
 #site-title,
 #site-description {
 	font-family: 'Source Code Pro', monospace;
-	//text-transform: none;
 	font-style: normal;
 }
 
 #site-title {
 	font-weight: 300;
+	font-size: 2.5rem;
 }
 #site-description {
 	text-transform: lowercase;
@@ -100,7 +100,7 @@ cursor: default;
 }
 
 .page-numbers {
-border: 3px solid #2C3E50;
+border: 3px solid #073642;
 border-radius: 2px;
 }
 
@@ -128,31 +128,31 @@ border-radius: 2px;
 		button,
 		a img
 		 {
-			-webkit-transition: all 0.2s ease-in-out;
-			   -moz-transition: all 0.2s ease-in-out;
-			      -o-transition:  all 0.2s ease-in-out;
-			        transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.3s ease-in-out;
+			   -moz-transition: all 0.3s ease-in-out;
+			      -o-transition:  all 0.3s ease-in-out;
+			        transition: all 0.3s ease-in-out;
 		}
 
-.page-links a:hover, 
+.page-links a:hover,
 .page-links a:focus,
-a:hover, 
+a:hover,
 a:focus,
-input[type=submit]:focus, 
-input[type=submit]:hover, 
-input[type=reset]:focus, 
-input[type=reset]:hover, 
-input[type=button]:focus, 
-input[type=button]:hover, 
-button:focus, 
-button:hover, 
-.menu-toggle button:hover, 
+input[type=submit]:focus,
+input[type=submit]:hover,
+input[type=reset]:focus,
+input[type=reset]:hover,
+input[type=button]:focus,
+input[type=button]:hover,
+button:focus,
+button:hover,
+.menu-toggle button:hover,
 .media-info-toggle:hover {
 	text-decoration: none;
 }
 
 
-a:hover, 
+a:hover,
 a:focus {
 	text-decoration: none;
 	background-color: #EEE8D5;
@@ -171,8 +171,9 @@ color: #B58900;
 }
 
 .main .entry-title, .entry-title a {
-color: #7f8c8d;
-text-transform: lowercase;
+color: #b58900;
+font-weight: 300;
+font-size: 2.25rem;
 }
 
 .entry-header, .entry-footer, .media-meta .data, .comments-closed, .comment-meta, label, .logged-in-as, .form-allowed-tags, .comment-notes, .comments-nav .page-numbers {
@@ -180,8 +181,8 @@ color: #93A1A1;
 }
 
 blockquote, .gallery-caption {
-color: #ECF0F1;
-background-color: #34495E;
+color: #657b83;
+background-color: #eee8d5;
 padding:     1.875rem 1.5rem;
 font-size:   1.125rem;
 line-height: 1.875rem;
@@ -263,10 +264,38 @@ border-radius: 3px 0 3px 3px;
 border-radius: 2px 2px 0 0;
 }
 
-#site-title, #site-title a, #footer .credit a, .ltr #site-description {
+#footer .credit a, .ltr #site-description {
 background: #34495e;
 }
 
 .plural .featured-media img {
 margin-bottom: -8px;
 }
+
+/*.wrap #site-title a, #footer .credit a {
+color: #b58900;
+}*/
+
+#site-title a:hover {
+background-color: #34495e;
+}
+
+#site-title::before {
+vertical-align: middle;
+font-size: 2.5rem;
+color: #6c71c4;
+}
+
+.entry-content p:first-child:first-letter, .entry-summary p:first-child:first-letter {
+	float: left;
+	color: #DC322F;
+	font-weight: 200;
+	background-color: #EEE8D5;
+	font-size: 68px;
+	line-height: 60px;
+	padding-right: 3px;
+	padding-left: 3px;
+	margin-right: 2px;
+	font-family: 'Source Code Pro', monospace;
+	border-radius: 2px;
+	}
