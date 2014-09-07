@@ -1,24 +1,23 @@
 <?php
 /**
- * @package    CMD
+ * @package    Trailing Spaces
  * @author     Marty Helmick <info@martyhelmick.com>
  * @copyright  Copyright (c) 2014, Marty Helmick
- * @link       https://github.com/m-e-h/cmd
+ * @link       https://github.com/m-e-h/trailing-spaces
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /* Add the child theme setup function to the 'after_setup_theme' hook. */
-add_action( 'after_setup_theme', 'cmd_theme_setup' );
+add_action( 'after_setup_theme', 'trailing_spaces_theme_setup' );
 
 /**
- * Setup function. All child themes should run their setup within this function. The idea is to add/remove
- * filters and actions after the parent theme has been set up. This function provides you that opportunity.
+ * Setup function.
  *
  * @since  1.0.0
  * @access public
  * @return void
  */
-function cmd_theme_setup() {
+function trailing_spaces_theme_setup() {
 
 	/*
 	 * Add a custom background to overwrite the defaults.
@@ -47,20 +46,19 @@ function cmd_theme_setup() {
 	);
 
 
-	/*
-	 * Add a custom default icon for the "header_icon" option
-	 */
-	add_filter( 'theme_mod_header_icon', 'cmd_theme_mod_header_icon' );
-	/*
-	 * Add a custom default color for the "menu" color option.
-	 */
-	add_filter( 'theme_mod_color_menu', 'cmd_color_menu' );
+	/* Add a custom default icon for the "header_icon" option. */
+	add_filter( 'theme_mod_header_icon', 'trailing_spaces_theme_mod_header_icon' );
 
-	/*
-	 * Add a custom default color for the "primary" color option.
-	 */
-	add_filter( 'theme_mod_color_primary', 'cmd_color_primary' );
+	/* Add a custom default color for the "menu" color option. */
+	add_filter( 'theme_mod_color_menu', 'trailing_spaces_color_menu' );
 
+	/* Add a custom default color for the "primary" color option. */
+	add_filter( 'theme_mod_color_primary', 'trailing_spaces_color_primary' );
+
+  /* Load stylesheets. */
+	add_action( 'wp_enqueue_scripts', 'trailing_spaces_enqueue_styles' );
+
+}
 
 /**
  * Filters the header icon to set the default.
@@ -70,7 +68,7 @@ function cmd_theme_setup() {
  * @param  string  $icon
  * @return string
  */
-function cmd_theme_mod_header_icon( $icon ) {
+function trailing_spaces_theme_mod_header_icon( $icon ) {
 	return 'default' === $icon ? 'icon-terminal' : $icon;
 }
 
@@ -82,7 +80,7 @@ function cmd_theme_mod_header_icon( $icon ) {
  * @param  string  $hex
  * @return string
  */
-function cmd_color_menu( $hex ) {
+function trailing_spaces_color_menu( $hex ) {
 	return $hex ? $hex : '34495e';
 }
 
@@ -94,26 +92,23 @@ function cmd_color_menu( $hex ) {
  * @param  string  $hex
  * @return string
  */
-function cmd_color_primary( $hex ) {
+function trailing_spaces_color_primary( $hex ) {
 	return $hex ? $hex : '268BD2';
 }
 
 /**
- * Enqueue scripts and styles.
+ * Loads custom stylesheets for the theme.
  *
  * @since  1.0.0
+ * @access public
  * @return void
  */
- add_action( 'wp_enqueue_scripts', 'cmd_enqueue_styles' );
-
-function cmd_enqueue_styles() {
+function trailing_spaces_enqueue_styles() {
 
 	/* Dequeue parent theme fonts. */
 	wp_dequeue_style( 'saga-fonts' );
 
 	/* Enqueue child themes fonts. */
-	wp_enqueue_style( 'cmd-fonts', '//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Source+Code+Pro:200,300,400,500,600' );
-
-}
+	wp_enqueue_style( 'trailing_spaces-fonts', '//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Source+Code+Pro:200,300,400,500,600' );
 
 }
