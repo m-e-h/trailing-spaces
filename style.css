@@ -156,6 +156,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	background-color: #EEE8D5;
+	outline: none;
 }
 
 .entry > .wrap, .plural .entry, .singular .main, .error-404 .main {
@@ -276,7 +277,7 @@ margin-bottom: -8px;
 color: #b58900;
 }*/
 
-#site-title a:hover {
+#site-title a:hover, #site-title a:focus {
 background-color: #34495e;
 }
 
