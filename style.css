@@ -275,3 +275,6 @@ blockquote cite {
 	font-size: 2.5rem;
 	vertical-align: middle;
 	}
+
+
+.menu li a[href*="codepen.io"]::after      { content: '\f181'; }
