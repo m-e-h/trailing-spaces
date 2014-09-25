@@ -54,7 +54,7 @@ function trailing_spaces_theme_setup() {
 	/* Add a custom default color for the "primary" color option. */
 	add_filter( 'theme_mod_color_primary', 'trailing_spaces_color_primary' );
 
-    /* Load stylesheets. */
+ 	/* Load stylesheets. */
 	add_action( 'wp_enqueue_scripts', 'trailing_spaces_enqueue_styles' );
 
 /**
