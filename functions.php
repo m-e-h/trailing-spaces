@@ -45,7 +45,6 @@ function trailing_spaces_theme_setup() {
 		)
 	);
 
-
 	/* Add a custom default icon for the "header_icon" option. */
 	add_filter( 'theme_mod_header_icon', 'trailing_spaces_theme_mod_header_icon' );
 
@@ -57,8 +56,6 @@ function trailing_spaces_theme_setup() {
 
   /* Load stylesheets. */
 	add_action( 'wp_enqueue_scripts', 'trailing_spaces_enqueue_styles' );
-
-}
 
 /**
  * Filters the header icon to set the default.
@@ -95,6 +92,7 @@ function trailing_spaces_color_menu( $hex ) {
 function trailing_spaces_color_primary( $hex ) {
 	return $hex ? $hex : '268BD2';
 }
+}
 
 /**
  * Loads custom stylesheets for the theme.
@@ -110,5 +108,4 @@ function trailing_spaces_enqueue_styles() {
 
 	/* Enqueue child themes fonts. */
 	wp_enqueue_style( 'trailing_spaces-fonts', '//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700|Source+Code+Pro:200,300,400,500,600' );
-
 }
