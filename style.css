@@ -277,4 +277,4 @@ blockquote cite {
 	}
 
 
-.menu li a[href*="codepen.io"]::after      { content: '\f181'; }
+.menu li a[href*="trello.com"]::after      { content: '\f181'; }
