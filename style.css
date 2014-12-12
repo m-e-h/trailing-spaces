@@ -236,7 +236,7 @@ input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-loc
 	top: auto;
 	bottom: 5.3rem;
 	color: #cb4b16;
-	content: "\007D";;
+	content: "\007D";
 	}
 
 blockquote cite {
