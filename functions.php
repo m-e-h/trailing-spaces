@@ -41,7 +41,8 @@ function trailing_spaces_theme_setup() {
 		'custom-header',
 		array(
 			'default-text-color' => 'b58900',
-			'default-image'      => ''
+			'default-image'      => '',
+			'random-default'     => false,
 		)
 	);
 
@@ -53,9 +54,8 @@ function trailing_spaces_theme_setup() {
 
 	/* Add a custom default color for the "primary" color option. */
 	add_filter( 'theme_mod_color_primary', 'trailing_spaces_color_primary' );
+}
 
- 	/* Load stylesheets. */
-	add_action( 'wp_enqueue_scripts', 'trailing_spaces_enqueue_styles' );
 
 /**
  * Filters the header icon to set the default.
@@ -79,7 +79,7 @@ function trailing_spaces_theme_mod_header_icon( $icon ) {
  */
 function trailing_spaces_color_menu( $hex ) {
 	return $hex ? $hex : '34495e';
-	}
+}
 
 /**
  * Add a default custom color for the theme's "primary" color option.
@@ -91,7 +91,6 @@ function trailing_spaces_color_menu( $hex ) {
  */
 function trailing_spaces_color_primary( $hex ) {
 	return $hex ? $hex : '268BD2';
-	}
 }
 
 /**
@@ -101,6 +100,10 @@ function trailing_spaces_color_primary( $hex ) {
  * @access public
  * @return void
  */
+
+/* Load stylesheets. */
+add_action( 'wp_enqueue_scripts', 'trailing_spaces_enqueue_styles' );
+
 function trailing_spaces_enqueue_styles() {
 
 	/* Dequeue parent theme fonts. */
