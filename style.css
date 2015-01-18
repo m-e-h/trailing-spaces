@@ -269,5 +269,12 @@ blockquote cite {
 	vertical-align: middle;
 	}
 
+.loop-pagination .page-numbers {
+vertical-align: middle;
+}
+
+.loop-pagination {
+cursor: default;
+}
 
 .menu li a[href*="trello.com"]::after      { content: '\f181'; }
