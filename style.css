@@ -183,19 +183,17 @@ h1, h2, h3, h4, h5, h6,
 	color: #93a1a1;
 	}
 
-blockquote,
-.gallery-caption {
-	/*margin-bottom: 1.5rem;*/
-	/*padding:     1.875rem 1.5rem;*/
+blockquote {
 	color: #657b83;
 	background-color: #eee8d5;
-	/*font-size:   1.125rem;*/
-	/*line-height: 1.875rem;*/
 	}
 
-blockquote p,
-.gallery-caption p {
+blockquote p {
 	margin: 0;
+	}
+
+.gallery-icon a img {
+padding: 0;
 	}
 
 textarea {
